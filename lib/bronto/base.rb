@@ -24,7 +24,7 @@ module Bronto
     # If a symbol is passed in, it is converted to "method_plural_class_name" (e.g., :read => read_lists). A string
     # method is used as-is.
     # Pass in a block and assign a hash to soap.body with a structure appropriate to the method call.
-    def self.request(method, api_key = nil, refresh_header = false, &_block)
+    def self.request(method, api_key = nil, refresh_header = true, &_block)
       _soap_header = self.soap_header(api_key, refresh_header)
       api_key = api_key || self.api_key
 
